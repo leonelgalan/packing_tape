@@ -13,6 +13,7 @@ depends 'rbenv'
 depends 'nginx'
 depends 'database'
 depends 'postgresql'
+depends 'nodejs'
 depends 'hello_world'
 
 supports 'ubuntu'

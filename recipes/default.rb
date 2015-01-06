@@ -17,4 +17,6 @@ include_recipe 'packing_tape::nginx'
 
 include_recipe 'packing_tape::postgresql'
 
+include_recipe 'nodejs'
+
 include_recipe 'hello_world'
