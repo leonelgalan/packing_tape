@@ -1,0 +1,7 @@
+name             'packing_tape'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures packing_tape'
+long_description 'Installs/Configures packing_tape'
+version          '0.1.0'
