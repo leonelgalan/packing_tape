@@ -10,7 +10,10 @@ Installs/Configures packing_tape
 
 | Key | Type | Description  | Default |
 |---|---|---|---|
-| `node['packing_tape']['bacon']` | Boolean | whether to include bacon |  `true` |
+| `node['user']['name']` | String |   |  `'deploy'` |
+| `node['user']['password']` | String | Shadow hash of password.  |  `nil` |
+| `node['user']['group']` | String |   |  `'sudo'` |
+| `node['user']['ssh_key']` | String |   |  `nil` |
 
 ## Usage
 
