@@ -8,6 +8,8 @@ version '0.1.0'
 
 depends 'apt'
 depends 'user'
+depends 'ruby_build'
+depends 'rbenv'
 depends 'hello_world'
 
 supports 'ubuntu'

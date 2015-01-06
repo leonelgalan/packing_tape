@@ -11,4 +11,6 @@ include_recipe 'apt'
 
 include_recipe 'packing_tape::user'
 
+include_recipe 'packing_tape::rbenv'
+
 include_recipe 'hello_world'

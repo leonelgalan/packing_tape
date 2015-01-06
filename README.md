@@ -14,6 +14,7 @@ Installs/Configures packing_tape
 | `node['user']['password']` | String | Shadow hash of password.  |  `nil` |
 | `node['user']['group']` | String |   |  `'sudo'` |
 | `node['user']['ssh_key']` | String |   |  `nil` |
+| `node['ruby']['version']` | String |   |  `'2.1.5'` |
 
 ## Usage
 
