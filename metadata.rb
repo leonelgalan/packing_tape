@@ -10,6 +10,7 @@ depends 'apt'
 depends 'user'
 depends 'ruby_build'
 depends 'rbenv'
+depends 'nginx'
 depends 'hello_world'
 
 supports 'ubuntu'
