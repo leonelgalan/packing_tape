@@ -15,6 +15,8 @@ Installs/Configures packing_tape
 | `node['user']['group']` | String |   |  `'sudo'` |
 | `node['user']['ssh_key']` | String |   |  `nil` |
 | `node['ruby']['version']` | String |   |  `'2.1.5'` |
+| `node['postgresql']['version']` | String |   |  `'9.3'` |
+| `node['postgresql']['password']` | String |   |  `'postgres'` |
 
 ## Usage
 

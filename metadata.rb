@@ -11,6 +11,8 @@ depends 'user'
 depends 'ruby_build'
 depends 'rbenv'
 depends 'nginx'
+depends 'database'
+depends 'postgresql'
 depends 'hello_world'
 
 supports 'ubuntu'
