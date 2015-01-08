@@ -32,6 +32,16 @@ Include `packing_tape` in your node's `run_list`:
 }
 ```
 
+## Vagrant
+
+```shell
+vagrant up
+vagrant package
+mv package.box packing_tape-vagrant.box
+```
+
+`vagrant package --output packing_tape-vagrant.box` is broken on 1.7.1, see https://github.com/mitchellh/vagrant/issues/5098.
+
 ## License and Authors
 
 Author:: Leonel Galán (<leonel@smashingboxes.com>)

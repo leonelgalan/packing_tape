@@ -88,6 +88,8 @@ Strainerfile
 ###########
 .vagrant
 Vagrantfile
+package.box
+packing_tape-vagrant.box
 
 # Travis #
 ##########
