@@ -8,7 +8,7 @@
 #
 
 node.default['postgresql']['password']['postgres'] = node['postgresql']['password']
-node.default['build_essential']['compile_time'] = true
+node.default['build-essential']['compile_time'] = true
 
 include_recipe 'postgresql::server'
 include_recipe 'postgresql::ruby'
