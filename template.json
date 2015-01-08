@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+    "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_KEY`}}"
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `digitalocean_api_token`}}",
+      "droplet_name": "packing-tape-temp",
+      "snapshot_name": "packing_tape-{{timestamp}}",
+      "image": "ubuntu-14-04-x64",
+      "size": "2gb"
+    },
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "us-east-1",
+      "source_ami": "ami-74e27e1c",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu",
+      "ami_name": "packing-tape-base {{timestamp}}",
+      "associate_public_ip_address": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["cookbooks"],
+      "run_list": ["packing_tape::base"],
+      "json": {
+        "user": {
+          "password": "$1$AQUsDVGX$lgxMPGdyMW6HMp6ruBYdS.",
+          "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsNR7Iwc36JVXtNxh+CvG5oW4cFEe4PbmRJ/2XJWBxcjKZ43a9zJ2RzGGo/Uo4gk+Jr+qGPRWCjwIdVx4C+v/u7gLqsCRT/uNxmq63+AoFeKJo+YvHJ3sLxB/SkxgTgsDhEU7i9Y14CnAIzRq1GBFaJzWV+dj6tif4pDbhrsnzPYXUd/dKp7sAH/2WX50zH4qigvEl8PnqJxCc0nnnIhOqgY+T5craZRaLYAQGxVlapVCKT1YX94bL+aaWLvGTyW4JCp/jc3nN8ckY4w3Cu34mA/xP4+6N7+pKgPonzUq798ghxilDNX+s2xnUWIaJWwVNKBIqzLrhf31nPYnjGfpf leonel@smashingboxes.com"
+        }
+      }
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "packing_tape-{{.Provider}}.box",
+      "keep_input_artifact": true
+    }
+  ]
+}

@@ -90,6 +90,8 @@ Strainerfile
 Vagrantfile
 package.box
 packing_tape-vagrant.box
+packing_tape-digitalocean.box
+packing_tape-amazon-ebs.box
 
 # Travis #
 ##########

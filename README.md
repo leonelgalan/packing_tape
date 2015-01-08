@@ -42,6 +42,16 @@ mv package.box packing_tape-vagrant.box
 
 `vagrant package --output packing_tape-vagrant.box` is broken on 1.7.1, see https://github.com/mitchellh/vagrant/issues/5098.
 
+## Packer
+
+```zsh
+berks vendor cookbooks
+
+DIGITALOCEAN_API_TOKEN=your_digital_ocean_api_token packer build -only=digitalocean template.json
+
+AWS_ACCESS_KEY=your_aws_access_key AWS_SECRET_KEY=your_aws_secret_key packer build -only=amazon-ebs template.json
+```
+
 ## License and Authors
 
 Author:: Leonel Galán (<leonel@smashingboxes.com>)

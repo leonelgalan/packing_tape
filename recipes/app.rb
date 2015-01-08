@@ -1,12 +1,10 @@
 #
 # Cookbook Name:: packing_tape
-# Recipe:: default
+# Recipe:: app
 #
 # Copyright (C) 2015 Leonel Galán
 #
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'packing_tape::base'
-
-include_recipe 'packing_tape::app'
+include_recipe 'hello_world'
